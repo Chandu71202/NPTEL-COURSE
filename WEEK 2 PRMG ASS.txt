@@ -1,0 +1,154 @@
+def checkprime(n):
+  flag=0
+  for i in range(2,n):
+    if n%i==0:
+      flag=flag+1
+      break
+  return(flag==0)
+def primeproduct(m):
+  mum=m
+  #print("taken number as=",number)
+  for j in range(2,m):
+      if m%j==0 and m!=j: 
+          p=m//j
+          if checkprime(p)==True:
+            break
+          else:
+            m=p
+            continue
+      else:
+          p=m//j
+  q=mum//p
+  return(checkprime(p)==checkprime(q))
+
+
+def delchar(s,c):
+  new=[]
+  for i in s:
+      if c!=i:
+          new.append(i)
+  if len(new)>1:
+      answer=""
+      for r in new:
+          answer+=r
+      return(answer)
+    
+      
+  else:
+      return(s)
+
+    
+    
+def shuffle(l1,l2):
+  n=max(len(l1),len(l2))
+  newlist=[]
+  for i in range(n):
+      try:
+          newlist.append(int(l1[i]))
+      except:
+          pass
+      try:
+          newlist.append(int(l2[i]))
+      except:
+          pass
+  return(newlist)
+
+
+
+import ast
+
+def tolist(inp):
+  inp = "["+inp+"]"
+  inp = ast.literal_eval(inp)
+  return (inp[0],inp[1])
+
+def parse(inp):
+  inp = ast.literal_eval(inp)
+  return (inp)
+
+fncall = input()
+lparen = fncall.find("(")
+rparen = fncall.rfind(")")
+fname = fncall[:lparen]
+farg = fncall[lparen+1:rparen]
+
+if fname == "primeproduct":
+   arg = parse(farg)
+   print(primeproduct(arg))
+elif fname == "delchar":
+   (s1,s2) = parse(farg)
+   print(delchar(s1,s2))
+elif fname == "shuffle":
+   (l1,l2) = parse(farg)
+   print(shuffle(l1,l2))
+else:
+   print("Function", fname, "unknown")
+
+
+
+
+OUTPUT:
+
+
+Private Test cases used for evaluation	Input	Expected Output	Actual Output	Status
+Test Case 1	
+primeproduct(39)
+ True\n
+True\n
+Passed
+Test Case 2	
+primeproduct(81)
+ False\n
+False\n
+Passed
+Test Case 3	
+primeproduct(391)
+ True\n
+True\n
+Passed
+Test Case 4	
+primeproduct(7087)
+ True\n
+True\n
+Passed
+Test Case 5	
+delchar("abracadabra","a")
+ brcdbr\n
+brcdbr\n
+Passed
+Test Case 6	
+delchar("empire","c")
+ empire\n
+empire\n
+Passed
+Test Case 7	
+delchar("umpire","u")
+ mpire\n
+mpire\n
+Passed
+Test Case 8	
+delchar("temporary","ry")
+ temporary\n
+temporary\n
+Passed
+Test Case 9	
+shuffle([1,3,5,7,9],[])
+ [1, 3, 5, 7, 9]\n
+[1, 3, 5, 7, 9]\n
+Passed
+Test Case 10	
+shuffle([],[0,2,4,6,8])
+ [0, 2, 4, 6, 8]\n
+[0, 2, 4, 6, 8]\n
+Passed
+Test Case 11	
+shuffle([1,1000,100],[3,300,3000])
+ [1, 3, 1000, 300, 100, 3000]\n
+[1, 3, 1000, 300, 100, 3000]\n
+Passed
+Test Case 12	
+shuffle([17,51,92,111],[13,12])
+ [17, 13, 51, 12, 92, 111]\n
+[17, 13, 51, 12, 92, 111]\n
+Passed
+
