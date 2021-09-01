@@ -18,3 +18,8 @@ print(quicksort(l,0,len(l))) """
 
 l=list(range(10000,0,-1))
 print(quicksort(l,0,len(l)))
+
+"""
+This too has a limit of elements in a list . when it execeeds 5000 it starts behaving like insertion sort
+That can be overcome by using sys module with setrecusrionlimit() but also takes much time run the output
+"""
