@@ -9,3 +9,9 @@ def selectionsort(l):
  """
 l=list(range(5000,0,-1))
 print(selectionsort(l))
+
+
+""" Here it gets the output a little bit quicker than before.
+Since it checks every element before going into loop
+But in the both cases Time complexity is  O(n^2) . It isn't feasible for n over 5000
+Here comes the other one Merge Sort """
