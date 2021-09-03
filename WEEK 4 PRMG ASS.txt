@@ -2,7 +2,8 @@ Write a Python function histogram(l) that takes as input a list of integers with
 
 for each number n that appears in l, there should be exactly one pair (n,r) in the list returned by the function, where r is the number of repetitions of n in l.
 
-the final list should be sorted in ascending order by r, the number of repetitions. For numbers that occur with the same number of repetitions, arrange the pairs in ascending order of the value of the number.
+the final list should be sorted in ascending order by r, the number of repetitions. For numbers that occur with the same number of repetitions, arrange the pairs in 
+ascending order of the value of the number.
 
 For instance:
 
@@ -23,9 +24,11 @@ Student details: A list of pairs of form (rollnumber,name), where both entries a
 [ ("UGM2018001","Rohit Grewal"),("UGP2018132","Neha Talwar") ]
 
 A list of triples of the form (rollnumber,coursecode,grade), where all entries are strings. For instance,
-[ ("UGM2018001", "MA101", "AB"), ("UGP2018132", "PH101", "B"), ("UGM2018001", "PH101", "B") ]. You may assume that each roll number and course code in the grade list appears in the student details and course details, respectively.
+[ ("UGM2018001", "MA101", "AB"), ("UGP2018132", "PH101", "B"), ("UGM2018001", "PH101", "B") ]. You may assume that each roll number and course code in the grade list 
+appears in the student details and course details, respectively.
 
-Your task is to write a function transcript (coursedetails,studentdetails,grades) that takes these three lists as input and produces consolidated grades for each student. Each of the input lists may have its entries listed in arbitrary order. Each entry in the returned list should be a tuple of the form
+Your task is to write a function transcript (coursedetails,studentdetails,grades) that takes these three lists as input and produces consolidated grades for each student. 
+Each of the input lists may have its entries listed in arbitrary order. Each entry in the returned list should be a tuple of the form
 
 (rollnumber, name,[(coursecode_1,coursename_1,grade_1),...,(coursecode_k,coursename_k,grade_k)])
 
@@ -40,13 +43,14 @@ Each student's grades should sorted in ascending order by coursecode
 For instance
 
  
->>>transcript([("MA101","Calculus"),("PH101","Mechanics"),("HU101","English")],[("UGM2021001","Rohit Grewal"),("UGP2021132","Neha Talwar")],[("UGM2021001","MA101","AB"),("UGP2021132","PH101","B"),("UGM2021001","PH101","B")])
+>>>transcript([("MA101","Calculus"),("PH101","Mechanics"),("HU101","English")],[("UGM2021001","Rohit Grewal"),("UGP2021132","Neha Talwar")],[("UGM2021001","MA101","AB"),
+("UGP2021132","PH101","B"),("UGM2021001","PH101","B")])
 
 [('UGM2021001', 'Rohit Grewal', [('MA101', 'Calculus', 'AB'), ('PH101', 'Mechanics', 'B')]), ('UGP2021132', 'Neha Talwar', [('PH101', 'Mechanics', 'B')])]
 
 >>>transcript([("T1","Test 1"),("T2","Test 2"),("T3","Test 3")],[("Opener","Rohit Sharma"),("Captain","Virat Kohli"),("No3","Cheteshwar Pujara")],[("Opener","T1","14"),("Captain","T1","33"),("No3","T1","30"),("Opener","T2","55") ,("Captain","T2","158"),("No3","T2","19"), ("Opener","T3","33"),("Captain","T3","95"),("No3","T3","51")])
 
-[('Captain', 'Virat Kohli', [('T1', 'Test 1', '33'), ('T2', 'Test 2', '158'), ('T3', 'Test 3', '95')]), ('No3', 'Cheteshwar Pujara', [('T1', 'Test 1', '30'), ('T2', 'Test 2', '19'), ('T3', 'Test 3', '51')]), ('Opener', 'Rohit Sharma', [('T1', 'Test 1', '14'), ('T2', 'Test 2', '55'), ('T3', 'Test 3', '33')])]
+[('Captain', 'Virat Kohli', [('T1', 'Test 1', '33'), ('T2', 'Test 2', '158'), ('T3', 'Test 3', '95')]), ('No3', 'Cheteshwar Pujara', [('T1', 'Test 1', '30'), ('T2', 'Test2',19'), ('T3', 'Test 3', '51')]), ('Opener', 'Rohit Sharma', [('T1', 'Test 1', '14'), ('T2', 'Test 2', '55'), ('T3', 'Test 3', '33')])]
 
 
 
