@@ -3,7 +3,7 @@ def merge(la,lb):
     (i,j)=(0,0)
     while ( i+j < m+n ):
         if i==m :
-            #C.append(lb[j])
+            C.append(lb[j])
             j=j+1
         elif j==n :
             C.append(la[i])
@@ -12,9 +12,11 @@ def merge(la,lb):
             C.append(la[i])
             i=i+1
         elif la[i]>lb[j]:
-            #C.append(lb[j])
+            C.append(lb[j])
             j=j+1
         elif la[i]==lb[j]:
+            C.append(la[i])
+            C.append(lb[j])
             i=i+1
             j=j+1
     return C
@@ -28,7 +30,7 @@ def mergesort(l,left,right):
         R=mergesort(l,mid,right)
         return merge(L,R)
 
-l=[10,10,12,14,9,8,13]
+l=[int(x) for x in input().split()]
 print(mergesort(l,0,len(l)))
  
 
